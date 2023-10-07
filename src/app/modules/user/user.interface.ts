@@ -4,7 +4,7 @@ export type IUser = {
   name: string
   role: string
   adress?: string
-  phoneNumer: number
+  phoneNumber: number
 }
 
 export type UserModel = Model<IUser, Record<string, unknown>>

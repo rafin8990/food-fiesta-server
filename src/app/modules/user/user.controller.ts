@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, RequestHandler, Response } from 'express'
 import catchAsync from '../../../shared/catchAsync'
-import ApiError from '../../../errors/ApiError'
+
 import { UserService } from './user.service'
 
 const createUser: RequestHandler = catchAsync(
@@ -16,9 +16,7 @@ const createUser: RequestHandler = catchAsync(
         data: result,
       })
     } catch (error: any) {
-      if (error.code === 11000) {
-        throw new ApiError(500, 'Phone number already exist')
-      }
+      console.log(error)
     }
   },
 )
